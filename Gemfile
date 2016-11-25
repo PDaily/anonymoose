@@ -42,3 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'swagger-docs'
 gem 'redis-rails'
 gem 'redis-namespace'
+gem 'faker'
