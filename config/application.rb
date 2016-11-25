@@ -2,15 +2,12 @@ require_relative 'boot'
 
 require "rails"
 # Pick the frameworks you want:
-require "active_model/railtie"
 require "active_job/railtie"
-require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
-require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -30,6 +27,14 @@ module Anonymoose
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Set Redis Cache Store
     config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
+
+    # Set generators to MongoDB
+    config.generators do |g|
+      g.orm :mongoid
+    end
+
+    config.mongoid.logger = Logger.new($stdout, :warn)
   end
 end
