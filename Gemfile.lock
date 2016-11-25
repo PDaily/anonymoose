@@ -41,6 +41,8 @@ GEM
     arel (7.1.4)
     builder (3.2.2)
     byebug (9.0.6)
+    codeclimate-test-reporter (1.0.3)
+      simplecov
     concurrent-ruby (1.0.2)
     coveralls (0.8.15)
       json (>= 1.8, < 3)
@@ -187,6 +189,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  codeclimate-test-reporter (~> 1.0.0)
   coveralls
   dotenv-rails
   factory_girl_rails (~> 4.0)
@@ -197,6 +200,7 @@ DEPENDENCIES
   redis-namespace
   redis-rails
   rspec-rails (~> 3.5)
+  simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
